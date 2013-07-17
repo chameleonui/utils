@@ -30,9 +30,9 @@ blh(
             if (unit(value) == '' && value != 0) {
                 value-px = round(value * line-height);
                 value-rem = (value * line-height) / font-size;
-                value-rem = roundto(value-rem, 1);
-                push(values-px, unit(value-px, px));
-                push(values-rem, unit(value-rem, rem));
+                value-rem = (round(value-rem * 10)/10);
+                push(values-px, unit(value-px, 'px'));
+                push(values-rem, unit(value-rem, 'rem'));
                 has-rem = true;
             } else {
                 push(values-px, value);
