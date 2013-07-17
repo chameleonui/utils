@@ -1,0 +1,64 @@
+@import 'roundto'
+@import 'body-line-height'
+@import 'px-rem'
+@import 'margin'
+@import 'padding'
+@import 'width'
+@import 'height'
+@import 'font-size'
+
+// Variables
+// ============================================================
+html-font-size-px = 10px;
+body-font-size-px = 1.6 * html-font-size-px;
+body-line-height = 1.5;
+body-line-height-px = body-line-height * body-font-size-px;
+
+// Styles
+// ============================================================
+html {
+    font-size: html-font-size-px;
+}
+
+body {
+    font-family: Helvetica Neue, sans-serif;
+    font-size: body-font-size-px;
+    line-height: body-line-height-px;
+}
+
+pre {
+    font-size: 14px;
+}
+
+p {
+    margin: 0 0 .5 0;
+}
+
+// Tests
+// ============================================================
+.blh {
+    margin: 0 auto 1 auto;
+    padding: 1 2px 1.5 3;
+    width: 20;
+    border: 1px solid aqua;
+    text-align: justify;
+}
+
+.px-rem {
+    font-size: 18px; 
+}
+
+.font-size {
+    font-size: h1;
+    font-size: h2;
+    font-size: h3;
+    font-size: h4;
+    font-size: h5;
+    font-size: h6;
+    font-size: body;
+    font-size: small;
+    font-size: 23.453px;
+    font-size: 2em;
+    font-size: 2rem;
+    font-size: 20%;
+}

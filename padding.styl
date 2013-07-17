@@ -1,0 +1,40 @@
+// ==================================================
+// Enhanced padding mixin
+// ==================================================
+
+
+// Help
+// ==================================================
+// Overrides padding property and enable unit less values
+// to be considered as body-line-height multipliers.
+// 
+// In: 
+// padding: 0 auto 1px 2;
+// 
+// Out: 
+// padding: 0 auto 1px 48px;
+// padding: 0 auto 1px 4.8rem;
+
+
+// Mixin
+// ==================================================
+
+padding(){
+    blh('padding', arguments);
+}
+
+padding-top(){
+    blh('padding-top', arguments);
+}
+
+padding-right(){
+    blh('padding-right', arguments);
+}
+
+padding-bottom(){
+    blh('padding-bottom', arguments);
+}
+
+padding-left(){
+    blh('padding-left', arguments);
+}

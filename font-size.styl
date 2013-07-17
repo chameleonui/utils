@@ -1,0 +1,44 @@
+// ==================================================
+// Enhanced margin mixin
+// ==================================================
+
+
+// Help
+// ==================================================
+// Overrides margin property and enable unit less values
+// to be considered as body-line-height multipliers.
+// 
+// In: 
+// margin: 0 auto 1px 2;
+// 
+// Out: 
+// margin: 0 auto 1px 48px;
+// margin: 0 auto 1px 4.8rem;
+
+
+// Variables
+// ==================================================
+html-font-size-px ?= 10px;
+h1-font-size-px ?= 44px;
+h2-font-size-px ?= 32px;
+h3-font-size-px ?= 26px;
+h4-font-size-px ?= 21px;
+h5-font-size-px ?= 18px;
+h6-font-size-px ?= 16px;
+body-font-size-px ?= 16px;
+small-font-size-px ?= 32px;
+
+
+// Mixin
+// ==================================================
+font-size(value){
+    if (typeof(value) == 'ident'){
+        font-size: value+'-font-size-px';
+        font-size: unit(roundto((value+'-font-size-px') / html-font-size-px, 1), 'rem');
+    } else if (typeof(value) == 'unit' && unit(value) == 'px') {
+        font-size: round(value);
+        font-size: unit(roundto(value / html-font-size-px, 1), 'rem');
+    } else {
+        font-size: value;
+    }
+}

@@ -1,0 +1,17 @@
+// =============================================================================
+// Gradient functions
+// =============================================================================
+
+// Mixins
+// =============================================================================
+gradient-vertical(start-color, end-color) {
+    background-color: mix(start-color, end-color, 60%); // Fallback
+    background-image: -moz-linear-gradient(top, start-color, end-color); // FF 3.6+
+    background-image: -ms-linear-gradient(top, start-color, end-color); // IE10
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(start-color), to(end-color)); // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient(top, start-color, end-color); // Safari 5.1+, Chrome 10+
+    background-image: -o-linear-gradient(top, start-color, end-color); // Opera 11.10
+    background-image: linear-gradient(top, start-color, end-color); // The standard
+    background-repeat: repeat-x;
+    filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='"+start-color+"', endColorstr='"+end-color+"', GradientType=0)"; // IE9 and down
+}

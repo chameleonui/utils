@@ -1,0 +1,14 @@
+// Help
+// ==================================================
+// Round number to specified digits
+
+
+// Function
+// ==================================================
+roundto(number, digits = 0){
+  x = 1;
+  if (digits > 0){
+    x = 10 ** digits;
+  }
+  return round(number * x)/x;
+}

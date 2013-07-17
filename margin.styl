@@ -1,0 +1,40 @@
+// ==================================================
+// Enhanced margin mixin
+// ==================================================
+
+
+// Help
+// ==================================================
+// Overrides margin property and enable unit less values
+// to be considered as body-line-height multipliers.
+// 
+// In: 
+// margin: 0 auto 1px 2;
+// 
+// Out: 
+// margin: 0 auto 1px 48px;
+// margin: 0 auto 1px 4.8rem;
+
+
+// Mixins
+// ==================================================
+
+margin(){
+    blh('margin', arguments);
+}
+
+margin-top(){
+    blh('margin-top', arguments);
+}
+
+margin-right(){
+    blh('margin-right', arguments);
+}
+
+margin-bottom(){
+    blh('margin-bottom', arguments);
+}
+
+margin-left(){
+    blh('margin-left', arguments);
+}

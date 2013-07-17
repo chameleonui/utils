@@ -1,0 +1,52 @@
+// Help
+// ==================================================
+// This example:
+//      blh(margin, 2 0 2 auto);
+// 
+// will result in:
+//      margin: 48px 0 48px auto;
+//      margin: 4.8rem 0 4.8rem auto;
+
+
+// Variables
+// ==================================================
+html-font-size-px ?= 10px;
+body-line-height-px ?= 24px;
+
+// Mixin
+// ==================================================
+blh(
+    property, 
+    values, 
+    line-height = body-line-height-px, 
+    font-size = html-font-size-px
+) {
+    values-px = null;
+    values-rem = null;
+    has-rem = false;
+
+    for value in values {
+        if (typeof(value) == 'unit'){ // "auto" is not allowed for unit()
+            if (unit(value) == '' && value != 0) {
+                value-px = round(value * line-height);
+                value-rem = (value * line-height) / font-size;
+                value-rem = roundto(value-rem, 1);
+                push(values-px, unit(value-px, px));
+                push(values-rem, unit(value-rem, rem));
+                has-rem = true;
+            } else {
+                push(values-px, value);
+                push(values-rem, value);
+            }
+        } else {
+            push(values-px, value);
+            push(values-rem, value);
+        }
+    }
+    
+    // Output
+    {unquote(property)}: values-px;
+    if(has-rem){
+      {unquote(property)}: values-rem;
+    }
+}

@@ -1,0 +1,41 @@
+// ==================================================
+// New version of old px-rem mixin
+// ==================================================
+
+
+// Help
+// ==================================================
+// This example:
+//      px-rem(font-size, 24px);
+// 
+// will result in:
+//      font-size: 24px;
+//      font-size: 2.4rem;
+
+// Variables
+// ==================================================
+html-font-size ?= 10px;
+
+// Mixin
+// ==================================================
+px-rem(property, values) {
+    values-px = null;
+    values-rem = null;
+  
+    for value in values {
+        if (typeof(value) == 'unit' && value != 0) {
+            value-px = value;
+            value-rem = roundto((value / html-font-size), 1);
+           
+            push(values-px, unit(value-px, 'px'));
+            push(values-rem, unit(value-rem, 'rem'));
+        } else {
+            push(values-px, value);
+            push(values-rem, value);
+        }
+    }
+    
+    // Output
+    {unquote(property)}: values-px;
+    {unquote(property)}: values-rem;
+}

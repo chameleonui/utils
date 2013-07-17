@@ -1,0 +1,24 @@
+// ==================================================
+// Enhanced width mixin
+// ==================================================
+
+
+// Help
+// ==================================================
+// Overrides width property and enable unit less values
+// to be considered as body-line-width multipliers.
+// 
+// In: 
+// width: 10px 2;
+// 
+// Out: 
+// width: 10px 48px;
+// width: 10px 4.8rem;
+
+
+// Mixin
+// ==================================================
+
+width(){
+    blh('width', arguments);
+}

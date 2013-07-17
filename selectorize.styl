@@ -1,0 +1,41 @@
+
+// =============================================================================
+// Selectorize
+// =============================================================================
+
+
+// Help
+// =============================================================================
+// Converts list of items to string selecotor. E.g.:
+// 
+// === Input:
+// 
+// {selectorize('.', (a b c), ':hover')} {
+//   foo: bar;
+// }
+// 
+// === Output:
+//  
+// .a:hover, .b:hover, .c:hover" {
+//   foo: bar;
+// }
+// 
+// =============================================================================
+// Don't work with nested selectors, Stylus don't recognize each selector in list
+// 
+// {selectorize('.', (a b c))} {
+//      &:hover {
+//        ...will not work properly!
+//      }
+// }
+
+
+// Function
+// =============================================================================
+selectorize(pre = '', list= (), post = ''){
+  result = ()
+  for item in list {
+      push(result, join('',pre item post))
+  }
+  return join(', ',result)
+}
