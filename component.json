@@ -3,11 +3,27 @@
   "repo": "chameleonui/utils",
   "description": "Mixins and functions useful for every project",
   "version": "0.0.1",
+  "license": "MIT",
   "keywords": [],
   "dependencies": {},
   "development": {},
-  "license": "MIT",
   "styles": [
-    "utils.css"
+    "roundto.styl",
+    "percentage.styl",
+    "string-repeat.styl",
+    "selectorize.styl",
+    "body-line-height.styl",
+    "body-em.styl",
+    "px-rem.styl",
+    "font-size.styl",
+    "margin.styl",
+    "padding.styl",
+    "width.styl",
+    "height.styl",
+    "visibility.styl",
+    "vendors.styl",
+    "clearfix.styl",
+    "gradients.styl",
+    "text-overflow.styl"
   ]
 }
