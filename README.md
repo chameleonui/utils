@@ -78,7 +78,7 @@ Hide visually and from screenreaders, but maintain layout
 
 Hide from both screenreaders and browsers: http://h5bp.com/u
 
-### vhidden() {
+### vhidden()
 
 Hide only visually, but have it available for screenreaders: http://h5bp.com/v
 
