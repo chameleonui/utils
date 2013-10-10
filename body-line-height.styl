@@ -38,6 +38,9 @@ blh(
                 push(values-px, value);
                 push(values-rem, value);
             }
+        } else if (typeof(value) == 'string') { // targets the IE 6–8 hack via "\9"
+            push(values-px, unquote(value));
+            push(values-rem, unquote(value));
         } else {
             push(values-px, value);
             push(values-rem, value);
