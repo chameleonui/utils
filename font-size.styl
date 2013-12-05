@@ -28,13 +28,21 @@ h6-font-size-px ?= 16px;
 body-font-size-px ?= 16px;
 small-font-size-px ?= 32px;
 
+// --------------------------------------------------
+default-font-size-list = initial inherit large larger medium small smaller x-large x-small xx-large xx-small;
+// --------------------------------------------------
+
 
 // Mixin
 // ==================================================
 font-size(value){
     if (typeof(value) == 'ident'){
-        font-size: value+'-font-size-px';
-        font-size: unit(roundto((value+'-font-size-px') / html-font-size-px, 1), 'rem');
+        if (value in default-font-size-list) {
+            font-size: value;
+        } else {
+            font-size: value+'-font-size-px';
+            font-size: unit(roundto((value+'-font-size-px') / html-font-size-px, 1), 'rem');
+        }
     } else if (typeof(value) == 'unit' && unit(value) == 'px') {
         font-size: round(value);
         font-size: unit(roundto(value / html-font-size-px, 1), 'rem');
