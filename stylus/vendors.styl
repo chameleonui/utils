@@ -2,12 +2,21 @@
 // Vendors
 // =============================================================================
 
+// `vendors` is Stylus's build-in global variable
+// It's possible it will be removed when Stylus hit version v1, so we have to
+// predefine it to prevent further crashing.
+
+vendors ?= webkit moz ms o official
 
 // Mixin
 // =============================================================================
-_vendors(property, value, vendors){
-    for vendor in vendors {
-        -{vendor}-{property}: value;
+_vendors(property, value, set_vendors = vendors){
+    if set_vendors is not official {
+        for vendor in set_vendors {
+            if vendor is not official {
+                -{vendor}-{property}: value;
+            }
+        }
     }
     {property}: value;
 }
