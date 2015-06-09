@@ -82,7 +82,7 @@ Hide from both screenreaders and browsers: http://h5bp.com/u
 
 Hide only visually, but have it available for screenreaders: http://h5bp.com/v
 
-### vendors(property, value, vendors){
+### _vendors(property, value, vendors){
 
 Mixin to output vendors prefixed CSS properties.
 
