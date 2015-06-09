@@ -1,3 +1,8 @@
+### v1.1.0
+
+- `test.styl` renamed to `example.styl`
+- fixed makefile. Created `make example`
+
 ### v1.0.3
 
 - `vendors()` mixin is now prefixed as `_vendors()` to fix crashing with predefined `vendors` variable in Stylus

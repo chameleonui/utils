@@ -1,17 +1,14 @@
 
-build: components
-	@component build --dev
+build: components core.styl
+	@component build -u chameleon-stylus-plugin --dev
 
 components: component.json
 	@component install --dev
 
+example: components example.styl
+	stylus example.styl
+
 clean:
 	rm -fr build components
-
-test.css: test.styl test.html
-	stylus test.styl
-
-test: test.css test.html
-	open test.html
 
 .PHONY: clean
