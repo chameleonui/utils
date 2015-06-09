@@ -2,6 +2,7 @@
 
 - `test.styl` renamed to `example.styl`
 - fixed makefile. Created `make example`
+- updated `_vendors` mixin. 3rd parameter is now optional. By default it works with Stylus's build-in `vendors`
 
 ### v1.0.3
 
