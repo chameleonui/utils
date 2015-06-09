@@ -2,7 +2,7 @@
 // ==================================================
 // This example:
 //      blh(margin, 2 0 2 auto);
-// 
+//
 // will result in:
 //      margin: 48px 0 48px auto;
 //      margin: 4.8rem 0 4.8rem auto;
@@ -15,12 +15,8 @@ body-line-height-px ?= 24px;
 
 // Mixin
 // ==================================================
-blh(
-    property, 
-    values, 
-    line-height = body-line-height-px, 
-    font-size = html-font-size-px
-) {
+blh(property, values, line-height = body-line-height-px, font-size = html-font-size-px) {
+
     values-px = null;
     values-rem = null;
     has-rem = false;
@@ -46,7 +42,7 @@ blh(
             push(values-rem, value);
         }
     }
-    
+
     // Output
     {unquote(property)}: values-px;
     if(has-rem){
